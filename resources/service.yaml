@@ -1,0 +1,17 @@
+#controlling traffic / enabling network access
+apiVersion: v1
+kind: Service
+metadata:
+  name: web-app-service
+  labels:
+    app: web-app-service
+spec:
+  ports:
+  - port: 80
+    protocol: TCP
+    targetPort: 5000
+  selector:
+    app: web-app #must match with pod selector or deployment template selector
+  type: ClusterIP
+status:
+  loadBalancer: {}

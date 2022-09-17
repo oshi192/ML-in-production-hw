@@ -1,0 +1,13 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: printing-message-job
+spec:
+  template:
+    spec:
+      activeDeadlineSeconds: 30
+      containers:
+      - name: printing-message
+        image: oshi192/yurii-web-app:latest
+        command: ["echo", "Hello world from job"]
+      restartPolicy: OnFailure

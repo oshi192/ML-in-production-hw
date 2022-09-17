@@ -1,0 +1,11 @@
+#unit of deployment / runs several containers inside one pod object
+apiVersion: v1
+kind: Pod
+metadata:
+  name: web-app-pod
+spec:
+  containers:
+  - name: yurii-web-app
+    image: oshi192/yurii-web-app:latest
+    ports:
+      - containerPort: 5000
