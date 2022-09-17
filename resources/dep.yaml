@@ -1,0 +1,22 @@
+# deploying pods to k8s environment
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: web-app-dep
+  labels:
+    app: web-app
+spec:
+  selector:
+    matchLabels:
+      app: web-app
+  replicas: 2 #create replica set and pods with replicas amount
+  template:
+    metadata:
+      labels:
+          app: web-app #creating pods with this label
+    spec:
+      containers:
+        - name: yurii-web-app
+          image: oshi192/yurii-web-app:latest
+          ports:
+          - containerPort: 5000
