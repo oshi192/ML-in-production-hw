@@ -69,5 +69,15 @@ configuration:
  - **Drives per Server**: 1
 
 Wait while tenant will be created.
+in section Identity/users create new User with write permissions
+for example: 
+name: testuser
+password: testuser
+policy: readwrite
 
-   
+## CRUD with minio:
+[link to example from docs](https://min.io/docs/minio/linux/developers/python/minio-py.html)
+
+ requirements:
+ - 
+  
